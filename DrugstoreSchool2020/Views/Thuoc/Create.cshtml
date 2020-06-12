@@ -1,0 +1,33 @@
+﻿@model DrugstoreSchool2020.ViewModels.ThuocViewModels
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tạo Thuốc</h2>
+@using (Html.BeginForm("Create","Thuoc"))
+<div class="form-group">
+    @Html.LabelFor(m => m.TenThuoc)
+    @Html.TextBoxFor(m => m.TenThuoc, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.ThongTinThuoc)
+    @Html.TextBoxFor(m => m.ThongTinThuoc, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Date)
+    @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.DiaChi)
+    @Html.TextBoxFor(m => m.DiaChi, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Category)
+    @Html.DropDownListFor(m => m.Category, new SelectList(Model.Categories,"Id","Name"),"", new { @class = "form-control" })
+
+</div>
+
+<button type="submit" value="Save" class="btn btn-primary">
+    Save
+</button>
